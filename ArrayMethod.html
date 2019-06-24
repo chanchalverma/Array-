@@ -1,0 +1,44 @@
+<head>
+  <style>
+    body {
+      background-color: lightgray;
+      border: 2px sloid black;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Array Methods - push and pop</h1>
+    <hr />
+    <p id="p_array"></p>
+    <button onclick="AddMethod()">Add any subject</button>
+    <p>Enter subject</p>
+    <input type="text" id="txtAdd" style="display:none" />
+    <input
+      type="button"
+      id="butAdd"
+      style="display:none"
+      value="Add subject"
+      onclick="pushMethod(document.getElementById('txtAdd').value);"
+    />
+    <p id="p_result"></p>
+  </div>
+  <script>
+    var subjects = ["English", "Hindi", "Maths"];
+    document.getElementById("p_array").innerHTML = subjects;
+
+    function AddMethod() {
+      // document.getElementById("p_add").innerHTML = "Enter subject";
+      document.getElementById("txtAdd").style.display = "block";
+      document.getElementById("butAdd").style.display = "block";
+    }
+    function pushMethod(a) {
+      var newString = subjects.push(a);
+      document.getElementById("p_result").innerHTML = subjects;
+    }
+  </script>
+</body>
